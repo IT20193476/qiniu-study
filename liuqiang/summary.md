@@ -5,74 +5,60 @@
 >* 利用testing包进行单元测试
 
 ##1.在Mac OS X操作系统中安装go环境，并设置GOPATH，GOROOT
-  ```
-  打开终端（Terminal），输入以下代码：
-  cd ~    #进入当前用户下的根目录
-  ls -a    # -a可将隐藏文件显示，
-  找到.bash_profile文件
-  如果没有，就输入：vim .bash_profile   #创建很简单
-  进入vim后，按下a才能编辑，输入一下代码：
-  export GOROOT=/usr/local/go
-  export PATH=/usr/local/go/bin:$PATH
-  export GOPATH=你自己平时将go代码放置的地方
-  GOROOT就是pkg包默认安装到的地方，从官网上也可以看到，默认是安装到/usr/local/go
-  PATH很重要，系统自带的源码要运行必须有这个路径，默认安装路径时，在/usr/local/go/bin
-  GOPATH可以是用户任意喜欢的地方，放置自己写的go程序
-  此时，.bash_profile文件编写完毕，按esc，敲入:wq，回车，搞定。
-  退回到终端后,输入source  .bash_profile 使编辑生效
-  验证一下路径配置是否成功：
-  go env 就可以显示刚才设置的环境变量
-  环境变量配置完成。
-  ```
+    打开终端（Terminal），输入以下代码：
+    cd ~    #进入当前用户下的根目录
+    ls -a    # -a可将隐藏文件显示，
+    找到.bash_profile文件
+    如果没有，就输入：vim .bash_profile   #创建很简单
+    进入vim后，按下a才能编辑，输入一下代码：
+    export GOROOT=/usr/local/go
+    export PATH=/usr/local/go/bin:$PATH
+    export GOPATH=你自己平时将go代码放置的地方
+    GOROOT就是pkg包默认安装到的地方，从官网上也可以看到，默认是安装到/usr/local/go
+    PATH很重要，系统自带的源码要运行必须有这个路径，默认安装路径时，在/usr/local/go/bin
+    GOPATH可以是用户任意喜欢的地方，放置自己写的go程序
+    此时，.bash_profile文件编写完毕，按esc，敲入:wq，回车，搞定。
+    退回到终端后,输入source  .bash_profile 使编辑生效
+    验证一下路径配置是否成功：
+    go env 就可以显示刚才设置的环境变量
+    环境变量配置完成。
 ##2.在Mac OS X操作系统中安装Intellij IDEA，并在其中安装Go插件
-  ```
-  Preference-->Plugins中搜索go插件,然后进行安装,安装完成后重启IDEA就可以了
-  ```
+    Preference-->Plugins中搜索go插件,然后进行安装,安装完成后重启IDEA就可以了
 ##3.在go程序中引入包
-  ```
     import "包名"
     如要引入errors包,则输入如下内容:
     import "errors"
-  ```
 ##4.在go中如何定义函数,如何调用另一个包中的函数,什么是go语言中的多返回值
-  ```
-  func (p myType ) funcName ( a, b int , c string ) ( r , s int ) {
+    func (p myType ) funcName ( a, b int , c string ) ( r , s int ) {
       return
-  }
-  关键字——func
-  方法名——funcName
-  入参——— a,b int,b string
-  返回值—— r,s int
-  函数体—— {}
-  ```
+    }
+    关键字——func
+    方法名——funcName
+    入参——— a,b int,b string
+    返回值—— r,s int
+    函数体—— {}
 ##6.使用github托管代码常见操作
-  ```
-  例如要创建一个develop分支,则输入:
-  git checkout -b develop
-  例如要在分支中添加一个updateFile文件,则输入:
-  git add updateFile文件 
-  例如要在在分之内中添加updateInformation更新信息
-  git commit -m updateInformation
-  执行commit命令后,只是提交到了本地仓库,还未提交到远程仓库
-  例如要将其提交到develop分支,则输入:
-  git push origin <branchName>
-  ```
+    例如要创建一个develop分支,则输入:
+    git checkout -b develop
+    例如要在分支中添加一个updateFile文件,则输入:
+    git add updateFile文件 
+    例如要在在分之内中添加updateInformation更新信息
+    git commit -m updateInformation
+    执行commit命令后,只是提交到了本地仓库,还未提交到远程仓库
+    例如要将其提交到develop分支,则输入:
+    git push origin <branchName>
 ##7.利用testing包编写单元测试
-  ```
-  首先需要引入testing包,然后使用如下方式编写测试函数
-  func Test_要测试的函数的名字(t *testing.T){
-     if 测试不通过{
+    首先需要引入testing包,然后使用如下方式编写测试函数
+    func Test_要测试的函数的名字(t *testing.T){
+    if 测试不通过{
          t.Error("输出不通过信息")
-     }
-     t.Log("输出通过信息")
-  }
-  ```
+    }
+    t.Log("输出通过信息")
+    }
 ##8.练习题
-  ```
-  1.1. 编写第一个 Hello World 程序，将打印功能放在另一个包中实现（涉及 $GOPATH、包管理、函数调用）。
-  1.2. 给第一题中的包加上单元测试，并将其发布到 Github 上，本地安装后调用。
-  ```
-  
+    1.1. 编写第一个 Hello World 程序，将打印功能放在另一个包中实现（涉及 $GOPATH、包管理、函数调用）。
+    1.2. 给第一题中的包加上单元测试，并将其发布到 Github 上，本地安装后调用。
+      
 #2016-01-05 学习总结
 
 >* 变量定义
@@ -83,21 +69,17 @@
 >* 映射map
 
 ##1.变量定义
-  ```
-  在go语言中,变量定义跟其他语言不太一样,它的变量类型是写在后面的,如:
-  var a int 
-  初始化变量时,可以直接给变量赋值,如:
-  var a=10  //编译器会自动推导a的类型
-  也可以不声明,直接使用 := 进行赋值,如:
-  a :=3.14
-  变量类型既可以是内置类型,也可以是接口类型,如:
-  var x interface{}
-  ```
+    在go语言中,变量定义跟其他语言不太一样,它的变量类型是写在后面的,如:
+    var a int 
+    初始化变量时,可以直接给变量赋值,如:
+    var a=10  //编译器会自动推导a的类型
+    也可以不声明,直接使用 := 进行赋值,如:
+    a :=3.14
+    变量类型既可以是内置类型,也可以是接口类型,如:
+    var x interface{}
 ##2.指针
-  ```
-  定义指针
-  var p *int即可定义一个指针
-  ```
+    定义指针
+    var p *int即可定义一个指针
 ##3.结构体
   ```
   type Person struc{
@@ -353,7 +335,7 @@
 ##1.为什么需要并发
   ```
   并发主要是为了能充分利用CPU而产生的,例如,一个程序输入的时候,这个时候CPU是空闲着的,
-  为了让CPU在这段时间内也能工作,就产生了并发.
+  为了让CPU在这段时间内,也能工作,就产生了并发.
   ```
 ##2.Golang并发的特点
   ```
@@ -379,9 +361,9 @@
 ##3.如何用Golang做并发
   ```
   在golang中,是通过goroutine,chanel,select这三种机制来实现并发的
-  goroutine
+* goroutine
   是go里面被调度的最小单位你可以像使用线程那样使用goroutine
-  channel
+* channel
   channel是go里面消息同步的机制,往channel里面丢消息和取消息是一个原子操作
   msgChan := make(msgChan,1)
   go func(){
@@ -399,7 +381,7 @@
   |----------| ------------- |:-------------: |:-------------------:|
   |a:=<-c    |    pending    |    a==true     | a==false           |
   |a,ok:=<-c |    pending    |a==true,ok==true| a==false,ok==false |
-  select
+* select
   select看起来像switch,用来做channel的同步控制
   select{
       case <- chan1:
@@ -424,3 +406,34 @@
       }
       用taskpool重写生产者消费者的main函数
   ```
+
+#2016-01-12 学习总结
+>golang RESTful API
+
+- 什么是 RESTful API
+- RESTful API 最佳实践
+- 如何将 API REST 化
+- 用 Go 实现一个简易的 RESTful 框架
+
+##1.什么是RESTful API
+    REST == Representational State Transfer, 表现层状态转化
+    表现层，我们看到的是资源（Resources）
+    HTTP 是一种无状态的协议，资源的状态存储在服务端
+    状态转化，是指通过客户端的请求，来修改服务端资源的存储状态（CURD）
+##2.RESTful API最佳实践
+    资源
+        操作的对象，主体：名词，复数表示（举例：photos）
+        动作（GET / PUT / POST / PATCH / DELETE / ...）
+        修改状态的方式，符合 CURD
+    访问
+        永远使用 SSL
+    版本
+        版本放在 Header 中
+        或者，URL 中放主版本，Header 中放子版本
+        在 URL 中提供参数的过滤、排序、搜索
+##3.如何将API REST化 
+    http.ServeMux 做路由
+    http.Request.Method 获取请求的“方法”，也即动作（GET / PUT / POST / ...）
+    重复的工作让框架去做
+##4.练习题
+    用Go实现一个简易的RESTful框架
