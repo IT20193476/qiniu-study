@@ -494,9 +494,9 @@
 
 
 * 短网址
-- 映射函数
+  映射函数
 
-- mongo数据格式
+  mongo数据格式
 
   short字段做唯一索引
   {"_id":ObjectId("5689ddc96e4e029a26951467"), "short" : "o0ve4c", "url" : "http://www.qiniu.com"}}
